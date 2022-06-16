@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		html,body{
+			height: 100%;
+		}
+		.main-header{
+    background-color: #00a2a5
+}		
+.main-header .container{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin:auto;
+}
+.main-header .main-nav{
+    margin:auto;
+}
+.main-header .main-nav a{
+    text-decoration:none;
+    color:#fff;
+    padding: 10px 1em;
+	font-family: 'Noto Sans TC', sans-serif;
+	
+}
+
+		.ll {
+			background: url("https://i.pinimg.com/564x/48/5d/2a/485d2a0039e1867e5a047c80b434f7ca.jpg") no-repeat center center ;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			width: 100%;
+			background-color: #fff;
+		}
+
+
+
+
+	
+	
+		.login {
+    background-color: rgba(231, 231, 231, 0.5);
+    width: 400px;
+    border-radius: 10px;
+	border:5px solid #fff;
+	box-shadow: 0 0 10px #000;
+    backdrop-filter: blur(5px);
+   
+    text-align: center;
+}
+ .login  h1{
+            margin-bottom: 20px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #fff;
+			text-align: center;
+
+		}
+.login input {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    background: none;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 22px;
+    outline: none;
+    color: #7a7a7a;
+}
+.login input[type="text"], .login input[type="password"] {
+    border: 2px solid #00a2a5;
+    width: 220px;
+}
+
+.login input[type="submit"] {
+    width: 150px;
+    border: 2px solid #00a2a5;
+    cursor: pointer;
+}
+
+.login input[type="text"]:focus, .login input[type="password"]:focus {
+    border-color: #2ecc71;
+    width: 280px;
+    transition: 0.5s;
+}
+
+.login input[type="submit"]:hover {
+    background-color: #d8c036;
+    transition: 0.5s;
+}
+
+	</style>
+</head>
+
+<body>
+
+	<header class="main-header">
+		<div class="container">
+			<nav class="main-nav">
+                <a href="register.html">會員註冊</a>
+				<a href="login.html">互動教材</a>
+				<a href="https://www.k12ea.gov.tw/Tw/SingleWindow/QuizDetail?filter=12445983-2A68-41E7-BC50-E7448925D6BC&type=57&year=109">測驗題</a>
+				<a href="https://www.junyiacademy.org/course-compare/math-high/math-11">開放式課程</a>
+			</nav>
+		</div>
+	</header>	
+	
+
+<div id="firebaseui-auth-container"></div>
+<div class="ll">
+	<div class="login">
+		 
+		
+			
+				<h1>會員註冊</h1>
+				<form method="POST" action="/process-login">
+				<input type="text" name="username" id="username" placeholder="Username 帳號" />
+				<input type="password" name="password" id="password" placeholder="Password 密碼" />
+				<input type="submit" value="Submit 註冊" />
+			    </form>
+			
+		
+	</div>
+
+</div>
+
+
+
+
+
+ <!-- Scripts -->
+ <script src="assets/js/jquery.min.js"></script>
+ <script src="assets/js/jquery.dropotron.min.js"></script>
+ <script src="assets/js/browser.min.js"></script>
+ <script src="assets/js/breakpoints.min.js"></script>
+ <script src="assets/js/util.js"></script>
+ <script src="assets/js/main.js"></script>
+ <script type="module">
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+
+     const firebaseConfig = {
+     apiKey: "AIzaSyDNJNoqBc299IItlHZkuzPh5nufbUXGsOo",
+     authDomain: "turkeyrice-4da4e.firebaseapp.com",
+     databaseURL: "https://turkeyrice-4da4e-default-rtdb.asia-southeast1.firebasedatabase.app",
+     projectId: "turkeyrice-4da4e",
+     storageBucket: "turkeyrice-4da4e.appspot.com",
+     messagingSenderId: "304019265990",
+     appId: "1:304019265990:web:1a2a45e7ac9260a7497ac7"
+     };
+
+     const app = initializeApp(firebaseConfig);
+
+     import {getDatabase, ref, get, set, child, update, remove}
+     from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+     const db = getDatabase(app);
+
+     var userName = document.getElementById('username');
+     var account = document.getElementById('email');
+     var password = document.getElementById('password');
+
+
+     var registerBtn = document.getElementById('registerbtn');
+     var loginBtn = document.getElementById('loginbtn');
+
+
+     function InsertData(){
+     set(ref(db, 'Users/' + userName.value),{
+     UserName: userName.value,
+     Account: account.value,
+     Password: password.value
+     })
+     .then(()=>{
+     alert('data stored sucessfully');
+     })
+     .catch((error)=>{
+     alert('unsuccessful, error' + error);
+     });
+     }
+
+     
+
+     registerBtn.addEventListener('click', InsertData);
+ </script>
+
+</body>
+</html>
