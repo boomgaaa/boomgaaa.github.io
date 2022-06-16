@@ -1,98 +1,202 @@
-﻿<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>嘉義尋雞</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="icon" href="logo.ico" type="image/x-icon">
-	</head>
-	<body class="is-preload">
-		<div id="page-wrapper">
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		html,body{
+			height: 100%;
+		}
+		.main-header{
+    background-color: #00a2a5
+}		
+.main-header .container{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin:auto;
+}
+.main-header .main-nav{
+    margin:auto;
+}
+.main-header .main-nav a{
+    text-decoration:none;
+    color:#fff;
+    padding: 10px 1em;
+	font-family: 'Noto Sans TC', sans-serif;
+	
+}
 
-			<!-- Header -->
-				<div id="header">
+		.ll {
+			background: url("https://i.pinimg.com/564x/48/5d/2a/485d2a0039e1867e5a047c80b434f7ca.jpg") no-repeat center center ;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			width: 100%;
+			background-color: #fff;
+		}
 
-					<!-- Logo -->
-						<h1><a href="index.html" id="logo">數位三 陳奕潤 S10855012</a></h1>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li class="current"><a href="index.html">尋雞首頁</a></li>
-                                <li><a href="login.html">登入頁面</a></li>
-                                <li><a href="register.html">註冊頁面</a></li>
-                                <li><a href="about.html">店家資訊</a></li>
-                                <li><a href="forum.html">討論區</a></li>
-							</ul>
-						</nav>
 
-				</div>
 
-			<!-- Banner -->
-				<section id="banner">
-					<header>
+	
+	
+		.login {
+    background-color: rgba(231, 231, 231, 0.5);
+    width: 400px;
+    border-radius: 10px;
+	border:5px solid #fff;
+	box-shadow: 0 0 10px #000;
+    backdrop-filter: blur(5px);
+   
+    text-align: center;
+}
+ .login  h1{
+            margin-bottom: 20px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #fff;
+			text-align: center;
 
-					</header>
-				</section>
+		}
+.login input {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    background: none;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 22px;
+    outline: none;
+    color: #7a7a7a;
+}
+.login input[type="text"], .login input[type="password"] {
+    border: 2px solid #00a2a5;
+    width: 220px;
+}
 
-			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						<div class="row">
-							<section class="col-3 col-6-narrower col-12-mobilep">
-								<h3>嘉義尋雞</h3>
-								<ul class="links">
-                                    <li><a href="index.html">尋雞首頁</a></li>
-                                    <li><a href="login.html">登入頁面</a></li>
-                                    <li><a href="register.html">註冊頁面</a></li>
-                                    <li><a href="about.html">店家資訊</a></li>
-                                    <li><a href="forum.html">討論區</a></li>
-								</ul>
-							</section>
-							<section class="col-3 col-6-narrower col-12-mobilep">
-								<h3>店家資訊</h3>
-								<ul class="links">
-									<li><a href="ahong.html">阿宏師火雞肉飯</a></li>
-									<li><a href="easy.html">簡單火雞肉飯</a></li>
-									<li><a href="river.html">阿溪火雞肉飯</a></li>
-								</ul>
-							</section>
-							<section class="col-6 col-12-narrower">
-								<h3>問題與回饋</h3>
-								<form>
-									<div class="row gtr-50">
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="name" id="name" placeholder="姓名" />
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="email" name="email" id="email" placeholder="電子郵件" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" id="message" placeholder="請輸入您的意見" rows="5"></textarea>
-										</div>
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" class="button alt" value="送出" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
-							</section>
-						</div>
-					</div>
-				</div>
+.login input[type="submit"] {
+    width: 150px;
+    border: 2px solid #00a2a5;
+    cursor: pointer;
+}
 
+.login input[type="text"]:focus, .login input[type="password"]:focus {
+    border-color: #2ecc71;
+    width: 280px;
+    transition: 0.5s;
+}
+
+.login input[type="submit"]:hover {
+    background-color: #d8c036;
+    transition: 0.5s;
+}
+
+	</style>
+</head>
+
+<body>
+
+	<header class="main-header">
+		<div class="container">
+			<nav class="main-nav">
+				<a href="./login.html">互動教材</a>
+				<a href="https://www.k12ea.gov.tw/Tw/SingleWindow/QuizDetail?filter=12445983-2A68-41E7-BC50-E7448925D6BC&type=57&year=109">測驗題</a>
+				<a href="https://www.junyiacademy.org/course-compare/math-high/math-11">開放式課程</a>
+			</nav>
 		</div>
+	</header>	
+	
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+<div id="firebaseui-auth-container"></div>
+<div class="ll">
+	<div class="login">
+		 
+		
+			
+				<h1>會員登入</h1>
+				<form method="POST" action="/process-login">
+				<input type="text" name="username" id="username" placeholder="Username 帳號" />
+				<input type="password" name="password" id="password" placeholder="Password 密碼" />
+				<input type="submit" value="Submit 提交" />
+			    </form>
+			
+		
+	</div>
+
+</div>
 
 
-	</body>
+
+
+
+ <!-- Scripts -->
+ <script src="assets/js/jquery.min.js"></script>
+ <script src="assets/js/jquery.dropotron.min.js"></script>
+ <script src="assets/js/browser.min.js"></script>
+ <script src="assets/js/breakpoints.min.js"></script>
+ <script src="assets/js/util.js"></script>
+ <script src="assets/js/main.js"></script>
+ <script type="module">
+	 var app_firebase = {};
+	 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+	 (function(){
+		 const firebaseConfig = {
+			 apiKey: "AIzaSyDNJNoqBc299IItlHZkuzPh5nufbUXGsOo",
+			 authDomain: "turkeyrice-4da4e.firebaseapp.com",
+			 databaseURL: "https://turkeyrice-4da4e-default-rtdb.asia-southeast1.firebasedatabase.app",
+			 projectId: "turkeyrice-4da4e",
+			 storageBucket: "turkeyrice-4da4e.appspot.com",
+			 messagingSenderId: "304019265990",
+			 appId: "1:304019265990:web:1a2a45e7ac9260a7497ac7"
+	 };
+
+		 const app = initializeApp(firebaseConfig);
+	 
+		 app_firebase = app;
+	 })
+	 
+	 
+	 
+	 
+	 
+ </script>
+ <script>
+	 (function(){
+		 var ui = new firebaseui.auth.AuthUI(firebase.auth());
+		 var uiConfig = {
+		 callbacks: {
+			 signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+			 // User successfully signed in.
+			 // Return type determines whether we continue the redirect automatically
+			 // or whether we leave that to developer to handle.
+			 return true;
+			 },
+			 uiShown: function() {
+			 // The widget is rendered.
+			 // Hide the loader.
+			 document.getElementById('loader').style.display = 'none';
+			 }
+		 },
+		 // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+		 signInFlow: 'popup',
+		 signInSuccessUrl: '<index.html>',
+		 signInOptions: [
+			 // Leave the lines as is for the providers you want to offer your users.
+			 firebase.auth.EmailAuthProvider.PROVIDER_ID,			
+		 ],
+		 // Terms of service url.
+		 tosUrl: '<index.html>',
+		 };
+		 
+		 ui.start('#firebaseui-auth-container', uiConfig);
+	 })	
+ </script>
+</body>
 </html>
