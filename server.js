@@ -63,7 +63,7 @@ const server = http.createServer((request, response) => {
         body = qs.parse(body);
         console.log(body);
 
-        if (body.username === "s10855021" && body.password === "123456") {
+        if (body.username === "nutn666" && body.password === "123456") {
           response.statusCode = 301;
           response.setHeader("Location", "/login-success.html");
         } else {
